@@ -6,15 +6,19 @@ import org.testng.annotations.*;
 import pageObjects.PageObject;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest implements IDriver {
 
     private static AppiumDriver appiumDriver; // singleton
     IPageObject po;
-
+    private String configPath = "src/test/resources/tests.properties";
+    public Properties properties;
 
     @Override
     public AppiumDriver getDriver() {
@@ -31,6 +35,7 @@ public class BaseTest implements IDriver {
         System.out.println("Before: app type - " + appType);
         setAppiumDriver(platformName, deviceName, browserName, app);
         setPageObject(appType, appiumDriver);
+        properties = getProperties();
     }
 
     @AfterSuite(alwaysRun = true)
@@ -63,6 +68,12 @@ public class BaseTest implements IDriver {
 
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {
         po = new PageObject(appType, appiumDriver);
+    }
+
+    private Properties getProperties() throws IOException {
+        Properties properties = new Properties();
+        properties.load(new FileInputStream(new File(configPath)));
+        return  properties;
     }
 
 }

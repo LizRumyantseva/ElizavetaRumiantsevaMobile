@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import setup.IPageObject;
 
 import java.lang.reflect.Field;
+import java.util.List;
 
 public class PageObject implements IPageObject {
 
@@ -65,6 +66,22 @@ public class PageObject implements IPageObject {
         Field field = nativeBudgetActivityPageObject.getClass().getDeclaredField(weName);
         field.setAccessible(true);
         return (WebElement) field.get(nativeBudgetActivityPageObject);
+    }
+
+    @Override
+    public WebElement getWeInGoogleSearchPageObject(String weName) throws NoSuchFieldException, IllegalAccessException {
+        // use reflection technique
+        Field field = googleSearchPageObject.getClass().getDeclaredField(weName);
+        field.setAccessible(true);
+        return (WebElement) field.get(googleSearchPageObject);
+    }
+
+    @Override
+    public List<WebElement> getListWeInGoogleSearchPageObject(String weName) throws NoSuchFieldException, IllegalAccessException {
+        // use reflection technique
+        Field field = googleSearchPageObject.getClass().getDeclaredField(weName);
+        field.setAccessible(true);
+        return (List<WebElement>) field.get(googleSearchPageObject);
     }
 
 }
