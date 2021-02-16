@@ -8,7 +8,7 @@ import setup.BaseTest;
 
 import java.io.IOException;
 
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
 
 public class webMobileTests extends BaseTest {
 
@@ -24,10 +24,9 @@ public class webMobileTests extends BaseTest {
                 wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete")
         );
 
-        getPo().getWeInGoogleSearchPageObject("queryField").sendKeys(searchString);
-        getPo().getWeInGoogleSearchPageObject("queryField").sendKeys(Keys.ENTER);
-        assertTrue(!getPo().getListWeInGoogleSearchPageObject("resultList").isEmpty());
-
+        getPo().getWelement("queryField").sendKeys(searchString);
+        getPo().getWelement("queryField").sendKeys(Keys.ENTER);
+        assertFalse(getPo().getListWelements("resultList").isEmpty());
     }
 
 }

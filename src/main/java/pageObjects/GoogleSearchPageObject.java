@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class GoogleSearchPageObject {
-//    private String url = "https://www.google.com/";
 
     @FindBy(xpath = "//input[@name='q']")
     private WebElement queryField;
