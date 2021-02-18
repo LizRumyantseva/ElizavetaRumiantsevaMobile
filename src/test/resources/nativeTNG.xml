@@ -11,10 +11,10 @@
             </run>
         </groups>
 <!--        <packages>-->
-<!--            <package name="scenarios"/>-->
+<!--            <package name="hw2.scenarios"/>-->
 <!--        </packages>-->
         <classes>
-            <class name="scenarios.nativeMobileTests"></class>
+            <class name="hw2.scenarios.nativeMobileTests"></class>
         </classes>
     </test>
 </suite>

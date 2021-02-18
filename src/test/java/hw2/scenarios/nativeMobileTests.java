@@ -1,7 +1,7 @@
-package scenarios;
+package hw2.scenarios;
 
 import org.testng.annotations.Test;
-import setup.BaseTest;
+import hw2.setup.BaseTest;
 import java.io.IOException;
 
 import static org.testng.Assert.assertTrue;

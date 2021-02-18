@@ -1,10 +1,10 @@
-package scenarios;
+package hw2.scenarios;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import setup.BaseTest;
+import hw2.setup.BaseTest;
 
 import java.io.IOException;
 
