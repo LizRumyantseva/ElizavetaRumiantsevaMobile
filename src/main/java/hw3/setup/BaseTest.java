@@ -47,6 +47,7 @@ public class BaseTest implements IDriver {
         System.out.println("Before: app type - " + appType);
         setAppiumDriver(platformName, deviceName, udid, browserName, app, appPackage, appActivity, bundleId);
         setPageObject(appType, appiumDriver);
+        System.out.println("appiumDriver set");
         properties = getProperties();
     }
 
@@ -54,6 +55,7 @@ public class BaseTest implements IDriver {
     public void tearDown() throws Exception {
         System.out.println("After");
         appiumDriver.closeApp();
+        System.out.println("App closed");
     }
 
     private void setAppiumDriver(String platformName, String deviceName, String udid, String browserName, String app,

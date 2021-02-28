@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Native mobile testing Suite">
     <parameter name="appType" value="native"></parameter>
-    <parameter name="deviceName" value="IPAD MINI"></parameter>
-    <parameter name="udid" value="00008020-001429081A43002E"></parameter>
+<!--    <parameter name="deviceName" value="IPHONE XR"></parameter>-->
+    <parameter name="udid" value="00008020-001229620CD3002E"></parameter>
     <parameter name="platformName" value="iOS"></parameter>
     <parameter name="bundleId" value="com.epam.EPAMTestApp.ii"></parameter>
     <test name="Cloud IOS Native tests">
