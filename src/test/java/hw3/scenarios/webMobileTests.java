@@ -4,6 +4,7 @@ import hw2.setup.BaseTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -26,7 +27,8 @@ public class webMobileTests extends BaseTest {
 
         getPo().getWelement("queryField").sendKeys(searchString);
         getPo().getWelement("queryField").sendKeys(Keys.ENTER);
-        assertFalse(getPo().getListWelements("resultList").isEmpty());
+//        assertFalse(getPo().getListWelements("resultList").isEmpty());
+        Assert.assertNotNull(getPo().getListWelements("resultList"));
     }
 
 }
